@@ -28,10 +28,10 @@ public class Partecipazione {
     public Partecipazione() {
     }
 
-    public Partecipazione(Persona persona, Evento evento, Stato stato) {
+    public Partecipazione(Persona persona, Evento evento) {
         this.persona = persona;
         this.evento = evento;
-        this.stato = stato;
+        this.stato = Stato.DA_CONFERMARE;
 
     }
     //GETTER E SETTER

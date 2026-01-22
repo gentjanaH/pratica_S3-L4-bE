@@ -32,13 +32,13 @@ public class PartecipazioneDAO {
         System.out.println("La partecipazione a:  " + newPartecipazione.getEvento() + " è stata salvata correttamente.");
     }
 
-    public Partecipazione getPartecipazioneById(UUID idPartecipazione) {
-        Partecipazione found = entityManager.find(Partecipazione.class, idPartecipazione);
-        if (found == null) throw new NotFoundException(idPartecipazione.toString());
+    public Partecipazione getPartecipazioneById(String idPartecipazione) {
+        Partecipazione found = entityManager.find(Partecipazione.class, UUID.fromString(idPartecipazione));
+        if (found == null) throw new NotFoundException(idPartecipazione);
         return found;
     }
 
-    public void delete(UUID idPartecipazione) {
+    public void deletePartecipazione(String idPartecipazione) {
         // 1. Cerco  tramite id nel DB
         Partecipazione found = this.getPartecipazioneById(idPartecipazione);
 

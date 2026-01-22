@@ -32,9 +32,9 @@ public class Persona {
     private GenderType genderType;
 
     @OneToMany(mappedBy = "persona")
-    private List<Partecipazione> partecipazioni = new ArrayList<>();
+    private List<Partecipazione> listaPartecipazioni;
 
-
+   
     //COSTRUTTORI
     public Persona() {
 
@@ -96,12 +96,12 @@ public class Persona {
         this.genderType = genderType;
     }
 
-    public List<Partecipazione> getPartecipazioni() {
-        return partecipazioni;
+    public List<Partecipazione> getListaPartecipazioni() {
+        return listaPartecipazioni;
     }
 
-    public void setPartecipazioni(List<Partecipazione> partecipazioni) {
-        this.partecipazioni = partecipazioni;
+    public void setListaPartecipazioni(List<Partecipazione> listaPartecipazioni) {
+        this.listaPartecipazioni = listaPartecipazioni;
     }
 
     @Override
@@ -113,7 +113,7 @@ public class Persona {
                 ", email='" + email + '\'' +
                 ", dataDiNascita=" + dataDiNascita +
                 ", genderType=" + genderType +
-                ", partecipazioni=" + partecipazioni +
+                ", listaPartecipazioni=" + listaPartecipazioni +
                 '}';
     }
 }

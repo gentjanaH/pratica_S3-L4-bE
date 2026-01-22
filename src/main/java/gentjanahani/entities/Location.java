@@ -70,7 +70,7 @@ public class Location {
                 "id=" + id +
                 ", Nome='" + Nome + '\'' +
                 ", Città='" + Città + '\'' +
-                /* ", eventi=" + eventi +*/
+                ", eventi=" + eventi +
                 '}';
     }
 }

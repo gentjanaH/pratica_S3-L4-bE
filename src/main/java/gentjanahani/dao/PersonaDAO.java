@@ -33,13 +33,13 @@ public class PersonaDAO {
         System.out.println(newPersona.getName() + newPersona.getSurname() + " è stato salvato correttamente aggiunto.");
     }
 
-    public Persona getPersonaById(UUID idPersona) {
-        Persona found = entityManager.find(Persona.class, idPersona);
-        if (found == null) throw new NotFoundException(idPersona.toString());
+    public Persona getPersonaById(String idPersona) {
+        Persona found = entityManager.find(Persona.class, UUID.fromString(idPersona));
+        if (found == null) throw new NotFoundException(idPersona);
         return found;
     }
 
-    public void delete(UUID idPersona) {
+    public void deletePersona(String idPersona) {
         // 1. Cerco tramite id nel DB
         Persona found = this.getPersonaById(idPersona);
 

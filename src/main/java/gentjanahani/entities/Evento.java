@@ -9,6 +9,7 @@ import java.util.UUID;
 
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "evento")
 public class Evento {
     //attributi
@@ -40,7 +41,7 @@ public class Evento {
 
     //collegamento con persona
     @OneToMany(mappedBy = "evento")
-    private List<Partecipazione> partecipazioni = new ArrayList<>();
+    private List<Partecipazione> listaPartecipazioni;
 
 
     //COSTRUTTORE VUOTO OBBLIGATORIO PER TUTTE LE ENTITIES!
@@ -106,12 +107,16 @@ public class Evento {
         this.numeroMaxPartecipanti = numeroMaxPartecipanti;
     }
 
-    public List<Partecipazione> getPartecipazioni() {
-        return partecipazioni;
+    public List<Partecipazione> getListaPartecipazioni() {
+        return listaPartecipazioni;
     }
 
-    public void setPartecipazioni(List<Partecipazione> partecipazioni) {
-        this.partecipazioni = partecipazioni;
+    public void setListaPartecipazioni(List<Partecipazione> listaPartecipazioni) {
+        this.listaPartecipazioni = listaPartecipazioni;
+    }
+
+    public Location getLocation() {
+        return location;
     }
 
     public void setLocation(Location location) {
@@ -129,8 +134,8 @@ public class Evento {
                 ", descrizione='" + descrizione + '\'' +
                 ", tipoEvento=" + tipoEvento +
                 ", numeroMaxPartecipanti=" + numeroMaxPartecipanti +
-                ", location=" + location +
-                ", partecipazioni=" + partecipazioni +
+//                ", location=" + location +
+//                ", listaPartecipazioni=" + listaPartecipazioni +
                 '}';
     }
 }

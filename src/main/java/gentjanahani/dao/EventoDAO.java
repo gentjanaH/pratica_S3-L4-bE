@@ -32,13 +32,13 @@ public class EventoDAO {
         System.out.println("L'evento " + newEvento.getTitolo() + " è stato salvato correttamente.");
     }
 
-    public Evento getById(UUID idEvento) {
-        Evento found = entityManager.find(Evento.class, idEvento);
-        if (found == null) throw new NotFoundException(idEvento.toString());
+    public Evento getById(String idEvento) {
+        Evento found = entityManager.find(Evento.class, UUID.fromString(idEvento));
+        if (found == null) throw new NotFoundException(idEvento);
         return found;
     }
 
-    public void delete(UUID idEvento) {
+    public void delete(String idEvento) {
         // 1. Cerco l'evento tramite id nel DB
         Evento found = this.getById(idEvento);
 

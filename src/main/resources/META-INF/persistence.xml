@@ -10,6 +10,9 @@
         <class>gentjanahani.entities.Persona</class>
         <class>gentjanahani.entities.Partecipazione</class>
         <class>gentjanahani.entities.Location</class>
+        <class>gentjanahani.entities.Concerto</class>
+        <class>gentjanahani.entities.GaraDiAtletica</class>
+        <class>gentjanahani.entities.PartitaDiCalcio</class>
 
 
         <properties>

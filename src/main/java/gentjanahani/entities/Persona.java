@@ -34,7 +34,7 @@ public class Persona {
     @OneToMany(mappedBy = "persona")
     private List<Partecipazione> listaPartecipazioni;
 
-   
+
     //COSTRUTTORI
     public Persona() {
 

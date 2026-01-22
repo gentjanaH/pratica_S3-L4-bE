@@ -1,9 +1,6 @@
 package gentjanahani;
 
-import gentjanahani.dao.EventoDAO;
-import gentjanahani.dao.LocationDAO;
-import gentjanahani.dao.PartecipazioneDAO;
-import gentjanahani.dao.PersonaDAO;
+import gentjanahani.dao.*;
 import gentjanahani.entities.*;
 import gentjanahani.exceptions.NotFoundException;
 import jakarta.persistence.EntityManager;
@@ -25,6 +22,9 @@ public class Application {
         PartecipazioneDAO partecipation = new PartecipazioneDAO(entityManager);
         EventoDAO evento = new EventoDAO(entityManager);
         LocationDAO location = new LocationDAO(entityManager);
+        ConcertoDAO concerto = new ConcertoDAO(entityManager);
+        PartitaDiCalcioDAO partita = new PartitaDiCalcioDAO(entityManager);
+        GaraDiAtleticaDAO gara = new GaraDiAtleticaDAO(entityManager);
 
         //---------SALVATAGGIO PERSONE, LOCATION, EVENTI------------------
         //PERSONE--

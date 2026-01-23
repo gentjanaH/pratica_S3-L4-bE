@@ -26,6 +26,27 @@ public class Application {
         PartitaDiCalcioDAO partita = new PartitaDiCalcioDAO(entityManager);
         GaraDiAtleticaDAO gara = new GaraDiAtleticaDAO(entityManager);
 
+//-------------------SALVATAGGIO CONTERTI, GARE E PARTITE-----------------
+        //Concerti
+        Concerto ultimo = new Concerto("Ultimo",
+                LocalDate.of(2026, 7, 4),
+                "La favola per sempre",
+                EventoType.PUBBLICO, 250,
+                ConcertType.POP,
+                false);
+        Concerto maneskin = new Concerto("Maneskin",
+                LocalDate.of(2026, 7, 4),
+                "Sono fuori di testa",
+                EventoType.PUBBLICO, 250,
+                ConcertType.ROCK,
+                false);
+        Concerto veneziaJazz = new Concerto("",
+                LocalDate.of(2026, 6, 27),
+                "Venezia Jazz Festival",
+                EventoType.PUBBLICO, 250,
+                ConcertType.CLASSICO,
+                false);
+
         //---------SALVATAGGIO PERSONE, LOCATION, EVENTI------------------
         //PERSONE--
         Persona mario = new Persona("Mario", "Rossi", "mario@rossi.it", LocalDate.of(1995, 7, 12), GenderType.M);

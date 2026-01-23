@@ -11,7 +11,7 @@ import java.time.LocalDate;
 public class Concerto extends Evento {
     //ATTRIBUTI
     @Column(name = "genere", nullable = false)
-    private EventoType genereConcerto;
+    private ConcertType genereConcerto;
     @Column(name = "in_streaming", nullable = false)
     private boolean inStreaming;
 
@@ -25,7 +25,7 @@ public class Concerto extends Evento {
             String descrizione,
             EventoType type,
             int numeroMaxPartecipanti,
-            EventoType genereConcerto,
+            ConcertType genereConcerto,
             boolean inStreaming
     ) {
         super(titolo, dataEvento, descrizione, type, numeroMaxPartecipanti);
@@ -35,11 +35,11 @@ public class Concerto extends Evento {
 
     //GETTER E SETTER
 
-    public EventoType getGenereConcerto() {
+    public ConcertType getGenereConcerto() {
         return genereConcerto;
     }
 
-    public void setGenereConcerto(EventoType genereConcerto) {
+    public void setGenereConcerto(ConcertType genereConcerto) {
         this.genereConcerto = genereConcerto;
     }
 
